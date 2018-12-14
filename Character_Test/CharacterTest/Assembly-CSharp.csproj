@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\Inventory\InventoryScript.cs" />
     <Compile Include="Assets\Scripts\Inventory\SlotScript.cs" />
     <Compile Include="Assets\Scripts\Items\Bag.cs" />
+    <Compile Include="Assets\Scripts\Items\EmptyBottle.cs" />
     <Compile Include="Assets\Scripts\Items\HealthPotion.cs" />
     <Compile Include="Assets\Scripts\Items\Item.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />

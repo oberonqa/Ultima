@@ -60,7 +60,7 @@ public class InventoryScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             HealthPotion potion = (HealthPotion)Instantiate(items[1]);
-            AddItem(potion);
+            AddItem(potion);            
         }
     }
 
@@ -88,6 +88,12 @@ public class InventoryScript : MonoBehaviour
         }
 
         PlaceInEmpty(item);
+    }
+
+    public void AddEmptyBottle()
+    {
+        EmptyBottle emptybottle = (EmptyBottle)Instantiate(items[2]);
+        AddItem(emptybottle);
     }
 
     private void PlaceInEmpty(Item item)
