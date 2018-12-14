@@ -4,11 +4,21 @@ using UnityEngine;
 
 public delegate void UpdateStackEvent();
 
-class ObservableStack<T> : Stack<T>
+public class ObservableStack<T> : Stack<T>
 {
     public event UpdateStackEvent OnPush;
     public event UpdateStackEvent OnPop;
     public event UpdateStackEvent OnClear;
+
+    public ObservableStack(ObservableStack<T> items) : base(items)
+    {
+
+    }
+
+    public ObservableStack()
+    {
+
+    }
 
     public new void Push(T item)
     {
