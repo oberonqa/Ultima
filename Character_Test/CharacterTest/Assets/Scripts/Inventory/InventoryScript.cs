@@ -91,9 +91,16 @@ public class InventoryScript : MonoBehaviour
             {
                 bagButton.MyBag = bag;
                 bags.Add(bag);
+                bag.MyBagButton = bagButton;
                 break;
             }
         }
+    }
+
+    public void RemoveBag(Bag bag)
+    {
+        bags.Remove(bag);
+        Destroy(bag.MyBagScript.gameObject);
     }
 
     public void AddItem(Item item)
