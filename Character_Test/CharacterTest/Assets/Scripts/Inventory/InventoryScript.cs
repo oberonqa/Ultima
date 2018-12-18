@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate void ItemCountChanged(Item item);
+
 public class InventoryScript : MonoBehaviour
 {
+    public event ItemCountChanged itemCountChangedEvent;
+
     private static InventoryScript instance;
 
     public static InventoryScript MyInstance
@@ -203,6 +207,7 @@ public class InventoryScript : MonoBehaviour
         {
             if (bag.MyBagScript.AddItem(item))
             {
+                OnItemCountChanged(item);
                 return;
             }
         }
@@ -216,6 +221,7 @@ public class InventoryScript : MonoBehaviour
             {
                 if (slots.StackItem(item))
                 {
+                    OnItemCountChanged(item);
                     return true;
                 }
             }
@@ -237,6 +243,35 @@ public class InventoryScript : MonoBehaviour
             {
                 bag.MyBagScript.OpenClose();
             }
+        }
+    }
+
+    public Stack<IUseable> GetUseables(IUseable type)
+    {
+        Stack<IUseable> useables = new Stack<IUseable>();
+
+        foreach (Bag bag in bags)
+        {
+            foreach (SlotScript slot in bag.MyBagScript.MySlots)
+            {
+                if (!slot.IsEmpty && slot.MyItem.GetType() == type.GetType())
+                {
+                    foreach (Item item in slot.MyItems)
+                    {
+                        useables.Push(item as IUseable);
+                    }
+                }
+            }
+        }
+
+        return useables;
+    }
+
+    public void OnItemCountChanged(Item item)
+    {
+        if (itemCountChangedEvent != null)
+        {
+            itemCountChangedEvent.Invoke(item);
         }
     }
 }
