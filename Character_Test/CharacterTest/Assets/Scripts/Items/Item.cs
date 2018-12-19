@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Item : ScriptableObject, IMoveable
+public abstract class Item : ScriptableObject, IMoveable, IDescribable
 {
     [SerializeField]
     private Sprite icon;
 
     [SerializeField]
     private int stackSize;
+
+    [SerializeField]
+    private string title;
 
     private SlotScript slot;
 
@@ -39,6 +42,11 @@ public abstract class Item : ScriptableObject, IMoveable
         {
             slot = value;
         }
+    }
+
+    public string GetDescription()
+    {
+        return title;
     }
 
     public void Remove()

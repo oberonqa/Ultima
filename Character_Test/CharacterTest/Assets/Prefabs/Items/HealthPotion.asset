@@ -13,4 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 09a20ea1cf32f8e47b6ca4f401a4a8c0, type: 3}
   stackSize: 10
+  title: Red Potion
   health: 25

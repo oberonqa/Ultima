@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripts\Spells\SpellScript.cs" />
     <Compile Include="Assets\Scripts\UIRelated\HandScript.cs" />
     <Compile Include="Assets\Scripts\UIRelated\IClickable.cs" />
+    <Compile Include="Assets\Scripts\UIRelated\IDescribable.cs" />
     <Compile Include="Assets\Scripts\UIRelated\IMoveable.cs" />
     <Compile Include="Assets\Scripts\UIRelated\IUseable.cs" />
     <Compile Include="Assets\Scripts\UIRelated\ObservableStack.cs" />

@@ -33,6 +33,11 @@ public class UIManager : MonoBehaviour
     private Image portraitFrame;
 
     [SerializeField]
+    private GameObject tooltip;
+
+    private Text tooltipText;
+
+    [SerializeField]
     private CanvasGroup keybindMenu;
 
     [SerializeField]
@@ -55,7 +60,8 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         keybindButtons = GameObject.FindGameObjectsWithTag("Keybind");
-        spellBarAnim = GameObject.FindGameObjectWithTag("SpellBarAnim").GetComponent<Animator>();        
+        spellBarAnim = GameObject.FindGameObjectWithTag("SpellBarAnim").GetComponent<Animator>();
+        tooltipText = tooltip.GetComponentInChildren<Text>();
     }
 
     // Use this for initialization
@@ -163,6 +169,18 @@ public class UIManager : MonoBehaviour
             clickable.MyIcon.color = new Color(0, 0, 0, 0);
             clickable.MyStackText.color = new Color(0, 0, 0, 0);
         }
+    }
+
+    public void ShowTooltip(Vector3 position, IDescribable description)
+    {
+        tooltip.SetActive(true);
+        tooltip.transform.position = position;
+        tooltipText.text = description.GetDescription();
+    }
+
+    public void HideTooltip()
+    {
+        tooltip.SetActive(false);
     }
 
     public void UpdateKeyText(string key, KeyCode code)

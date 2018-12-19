@@ -2,7 +2,7 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class BagButton : MonoBehaviour, IPointerClickHandler
+public class BagButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private Bag bag;
 
@@ -63,7 +63,21 @@ public class BagButton : MonoBehaviour, IPointerClickHandler
         {
             HandScript.MyInstance.TakeMoveable(MyBag);
         }        
-    }                       
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        // Show tooltip
+        if (bag != null)
+        {
+           // UIManager.MyInstance.ShowTooltip(transform.position);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        UIManager.MyInstance.HideTooltip();
+    }
 
     public void RemoveBag()
     {

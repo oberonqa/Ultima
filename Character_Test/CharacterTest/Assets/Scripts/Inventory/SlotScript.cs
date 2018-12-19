@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
+public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPointerEnterHandler, IPointerExitHandler
 {
     private ObservableStack<Item> items = new ObservableStack<Item>();
 
@@ -272,5 +272,19 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable
     private void UpdateSlot()
     {
         UIManager.MyInstance.UpdateStackSize(this);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        // Show tooltip
+        if (!IsEmpty)
+        {
+            UIManager.MyInstance.ShowTooltip(transform.position, MyItem);
+        }        
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        UIManager.MyInstance.HideTooltip();
     }
 }
