@@ -89,7 +89,10 @@ public class Spell : IUseable, IMoveable, IDescribable
 
     public string GetDescription()
     {
-        return string.Format("{0}\n Cast time: {1} second(s) \n Damage:{2} \n {3}", name, castTime, damage, description);
+        Spell s = SpellBook.MyInstance.GetSpell("Explosion");
+        Debug.Log("Spell Name: " + s.MyName + " | CastTime: " + s.MyCastTime + " | Damage: " + s.MyDamage);        
+        Debug.Log("Spell Description: " + description);
+        return string.Format("{0}\n Cast time: {1} second(s) \n Damage:{2} \n {3}", name, castTime, damage, description);        
     }
 
     public void Use()

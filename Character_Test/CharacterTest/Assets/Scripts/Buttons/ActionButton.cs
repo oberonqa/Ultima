@@ -140,10 +140,12 @@ public class ActionButton : MonoBehaviour, IPointerClickHandler, IClickable, IPo
         if (MyUseable != null && MyUseable is IDescribable)
         {
             tmp = (IDescribable)MyUseable;
+            // Need to impliment!
             // UIManager.MyInstance.ShowTooltip(transform.position);
         }
         else if (useables.Count > 0)
         {
+            // Need to impliment!
             // UIManager.MyInstance.ShowTooltip(transform.position);
         }
         if (tmp != null)
