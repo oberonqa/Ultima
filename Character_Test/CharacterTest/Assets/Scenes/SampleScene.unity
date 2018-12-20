@@ -1805,7 +1805,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 83.399376, y: -57.396168}
-  m_SizeDelta: {x: 78.619804, y: 38.115013}
+  m_SizeDelta: {x: 97.396164, y: 51.169327}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &159577379
 MonoBehaviour:
@@ -1826,7 +1826,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d003df0ff9c434a4c88da840cd1d2a0f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a0a31842b1cbfa44b8eb4cf25213e275, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1853,10 +1853,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 8
-    m_Right: 8
-    m_Top: 5
-    m_Bottom: 5
+    m_Left: 25
+    m_Right: 25
+    m_Top: 17
+    m_Bottom: 15
   m_ChildAlignment: 0
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
@@ -9348,6 +9348,15 @@ MonoBehaviour:
   targetFrame: {fileID: 1990740006}
   portraitFrame: {fileID: 1417753166}
   toolTip: {fileID: 159577377}
+  toolTipFrame: {fileID: 159577379}
+  toolTipFrames:
+  - {fileID: 21300000, guid: d7c3a6965807d154a8d5ce95fac1cfa7, type: 3}
+  - {fileID: 21300000, guid: 8ebe5659e7349e344bfb7a9a27040fd6, type: 3}
+  - {fileID: 21300000, guid: fc2de12854ff6c84fa933df50293cc44, type: 3}
+  - {fileID: 21300000, guid: e19c6778bbc4a37479306bd523094c72, type: 3}
+  - {fileID: 21300000, guid: a0a31842b1cbfa44b8eb4cf25213e275, type: 3}
+  - {fileID: 21300000, guid: 4a00b38eeaae96641a454f65e072b58d, type: 3}
+  - {fileID: 21300000, guid: d003df0ff9c434a4c88da840cd1d2a0f, type: 3}
   keybindMenu: {fileID: 370580366}
   spellBook: {fileID: 1551737132}
   spellBarAnim: {fileID: 2114291259}
@@ -10968,8 +10977,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 39.309902, y: -19.057507}
-  m_SizeDelta: {x: 62.619804, y: 28.115013}
+  m_AnchoredPosition: {x: 51.198082, y: -26.584663}
+  m_SizeDelta: {x: 52.396164, y: 19.169329}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1301788122
 MonoBehaviour:

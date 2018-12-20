@@ -38,6 +38,12 @@ public class UIManager : MonoBehaviour
     private Text toolTipTitle;
 
     [SerializeField]
+    private Image toolTipFrame;
+
+    [SerializeField]
+    private Sprite[] toolTipFrames;
+
+    [SerializeField]
     private CanvasGroup keybindMenu;
 
     [SerializeField]
@@ -47,6 +53,74 @@ public class UIManager : MonoBehaviour
     private Animator spellBarAnim;
 
     private GameObject[] keybindButtons;
+
+    public Image MyToolTipFrame
+    {
+        get
+        {
+            return toolTipFrame;
+        }
+        set
+        {
+            toolTipFrame = value;
+        }
+    }    
+
+    public Sprite CommonQualityFrame
+    {
+        get
+        {
+            return toolTipFrames[0];
+        }
+    }
+
+    public Sprite UncommonQualityFrame
+    {
+        get
+        {
+            return toolTipFrames[1];
+        }
+    }
+
+    public Sprite RareQualityFrame
+    {
+        get
+        {
+            return toolTipFrames[2];
+        }
+    }
+
+    public Sprite EpicQualityFrame
+    {
+        get
+        {
+            return toolTipFrames[3];
+        }
+    }
+
+    public Sprite LegendaryQualityFrame
+    {
+        get
+        {
+            return toolTipFrames[4];
+        }
+    }
+
+    public Sprite MythicalQualityFrame
+    {
+        get
+        {
+            return toolTipFrames[5];
+        }
+    }
+
+    public Sprite DefaultFrame
+    {
+        get
+        {
+            return toolTipFrames[6];
+        }
+    }
 
     public GameObject[] MyKeybindButtons
     { 
@@ -62,6 +136,7 @@ public class UIManager : MonoBehaviour
         keybindButtons = GameObject.FindGameObjectsWithTag("Keybind");
         spellBarAnim = GameObject.FindGameObjectWithTag("SpellBarAnim").GetComponent<Animator>();
         toolTipTitle = toolTip.GetComponentInChildren<Text>();
+        toolTipFrame = toolTip.GetComponent<Image>();
     }
 
     // Use this for initialization
@@ -173,7 +248,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowTooltip(Vector3 position, IDescribable description)
     {
-        toolTip.SetActive(true);
+        toolTip.SetActive(true);        
         toolTip.transform.position = position;
         toolTipTitle.text = description.GetDescription();
         Debug.Log("Tooltip Displayed: " + description.GetDescription());

@@ -111,12 +111,12 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPoin
         {
             if (item.MyQuality == Quality.Common)
             {
-                rarityFrame.enabled = false;
+                rarityFrame.enabled = false; 
             }
             if (item.MyQuality == Quality.Uncommon)
             {
                 rarityFrame.enabled = true;
-                rarityFrame.color = new Color(83 / 255f, 255f, 0 / 255f, 36 / 255f);
+                rarityFrame.color = new Color(83 / 255f, 255f, 0 / 255f, 36 / 255f);                
             }
 
             if (item.MyQuality == Quality.Rare)
@@ -337,6 +337,11 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPoin
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        UIManager.MyInstance.HideTooltip();
+        if (eventData == null)
+        {
+            UIManager.MyInstance.MyToolTipFrame.sprite = UIManager.MyInstance.DefaultFrame;
+        }
+        
+        UIManager.MyInstance.HideTooltip();        
     }
 }

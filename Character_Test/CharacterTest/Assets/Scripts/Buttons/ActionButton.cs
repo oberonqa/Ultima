@@ -150,6 +150,7 @@ public class ActionButton : MonoBehaviour, IPointerClickHandler, IClickable, IPo
         }
         if (tmp != null)
         {
+            UIManager.MyInstance.MyToolTipFrame.sprite = UIManager.MyInstance.DefaultFrame;
             UIManager.MyInstance.ShowTooltip(transform.position, tmp);
         }
     }
@@ -157,5 +158,6 @@ public class ActionButton : MonoBehaviour, IPointerClickHandler, IClickable, IPo
     public void OnPointerExit(PointerEventData eventData)
     {
         UIManager.MyInstance.HideTooltip();
+        UIManager.MyInstance.MyToolTipFrame.sprite = UIManager.MyInstance.DefaultFrame;
     }
 }

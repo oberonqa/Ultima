@@ -65,21 +65,27 @@ public abstract class Item : ScriptableObject, IMoveable, IDescribable
         {
             case Quality.Common:
                 color = "#d6d6d6";
+                UIManager.MyInstance.MyToolTipFrame.sprite = UIManager.MyInstance.CommonQualityFrame;
                 break;
             case Quality.Uncommon:
                 color = "#00ff3e";
+                UIManager.MyInstance.MyToolTipFrame.sprite = UIManager.MyInstance.UncommonQualityFrame;
                 break;
             case Quality.Rare:
                 color = "#0000e0";
+                UIManager.MyInstance.MyToolTipFrame.sprite = UIManager.MyInstance.RareQualityFrame;
                 break;
             case Quality.Epic:
                 color = "#b900ff";
+                UIManager.MyInstance.MyToolTipFrame.sprite = UIManager.MyInstance.EpicQualityFrame;
                 break;
             case Quality.Legendary:
                 color = "#ff5500";
+                UIManager.MyInstance.MyToolTipFrame.sprite = UIManager.MyInstance.LegendaryQualityFrame;
                 break;
             case Quality.Mythical:
                 color = "#f91111";
+                UIManager.MyInstance.MyToolTipFrame.sprite = UIManager.MyInstance.MythicalQualityFrame;
                 break;
         }
 
