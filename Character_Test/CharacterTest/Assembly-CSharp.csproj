@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\CharacterRelated\Player.cs" />
     <Compile Include="Assets\Scripts\CharacterRelated\Range.cs" />
     <Compile Include="Assets\Scripts\CharacterRelated\Stat.cs" />
+    <Compile Include="Assets\Scripts\console.cs" />
     <Compile Include="Assets\Scripts\EnemyStates\AttackState.cs" />
     <Compile Include="Assets\Scripts\EnemyStates\EvadeState.cs" />
     <Compile Include="Assets\Scripts\EnemyStates\FollowState.cs" />

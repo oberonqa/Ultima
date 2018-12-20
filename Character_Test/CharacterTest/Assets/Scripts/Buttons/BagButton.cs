@@ -70,7 +70,7 @@ public class BagButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
         // Show tooltip
         if (bag != null)
         {
-           // UIManager.MyInstance.ShowTooltip(transform.position);
+            UIManager.MyInstance.ShowTooltip(transform.position, MyBag);
         }
     }
 

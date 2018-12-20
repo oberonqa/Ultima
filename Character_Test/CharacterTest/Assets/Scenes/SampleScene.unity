@@ -1805,7 +1805,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 83.399376, y: -57.396168}
-  m_SizeDelta: {x: 166.79872, y: 114.79233}
+  m_SizeDelta: {x: 78.619804, y: 38.115013}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &159577379
 MonoBehaviour:
@@ -9347,7 +9347,7 @@ MonoBehaviour:
   - {fileID: 1610420100}
   targetFrame: {fileID: 1990740006}
   portraitFrame: {fileID: 1417753166}
-  tooltip: {fileID: 159577377}
+  toolTip: {fileID: 159577377}
   keybindMenu: {fileID: 370580366}
   spellBook: {fileID: 1551737132}
   spellBarAnim: {fileID: 2114291259}
@@ -10457,6 +10457,7 @@ Transform:
   - {fileID: 1634617143}
   - {fileID: 1155585626}
   - {fileID: 96403580}
+  - {fileID: 1826244596}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10794,7 +10795,6 @@ GameObject:
   - component: {fileID: 1298437779}
   - component: {fileID: 1298437782}
   - component: {fileID: 1298437781}
-  - component: {fileID: 1298437780}
   m_Layer: 5
   m_Name: BagToInventory
   m_TagString: Untagged
@@ -10820,47 +10820,6 @@ RectTransform:
   m_AnchoredPosition: {x: 423.09006, y: -98}
   m_SizeDelta: {x: 447.46, y: 61.9}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1298437780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1298437778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac430a731a6c93e4daf20f0ec65737e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  castingBar: {fileID: 75337071}
-  currentSpell: {fileID: 1701209935}
-  castTime: {fileID: 1527616132}
-  icon: {fileID: 668018244}
-  canvasGroup: {fileID: 1939180844}
-  spells:
-  - name: Explosion
-    damage: 5
-    icon: {fileID: 21300000, guid: 91ab9dbbd5c703748b0158fb1c7eda3d, type: 3}
-    speed: 15
-    castTime: 2.5
-    spellPrefab: {fileID: 1902044956659912, guid: ca20d192b8025444b865feab143565b9,
-      type: 2}
-    barColor: {r: 0.8584906, g: 0.38559783, b: 0.11743506, a: 1}
-  - name: Cold Blast
-    damage: 3
-    icon: {fileID: 21300000, guid: 0055333b5f659294887f460ea05ee402, type: 3}
-    speed: 15
-    castTime: 1.5
-    spellPrefab: {fileID: 1257890671650232, guid: 22eaecaa4592fa84495675c067a3ca4e,
-      type: 2}
-    barColor: {r: 0, g: 0.15367556, b: 1, a: 1}
-  - name: Lightning
-    damage: 1
-    icon: {fileID: 21300000, guid: 77584412a780e5a49b4c49100c30a662, type: 3}
-    speed: 15
-    castTime: 1
-    spellPrefab: {fileID: 1289655220280320, guid: 7ed9ab4f2f7cbe24a9b588f0ad119dad,
-      type: 2}
-    barColor: {r: 0.7830189, g: 0.033241354, b: 0.5619975, a: 1}
 --- !u!114 &1298437781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11009,8 +10968,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 83.39936, y: -57.396164}
-  m_SizeDelta: {x: 150.79872, y: 104.79233}
+  m_AnchoredPosition: {x: 39.309902, y: -19.057507}
+  m_SizeDelta: {x: 62.619804, y: 28.115013}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1301788122
 MonoBehaviour:
@@ -11032,11 +10991,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 07002e886e92e614ebf193907ac19b60, type: 3}
-    m_FontSize: 14
-    m_FontStyle: 0
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 10
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -11046,16 +11005,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Virtue Blade
 
-    A legendary blade, passed down
-
-    through the generations
-
-
-    Strength: 100
-
-    Vitality: 100
-
-    Dextarity: 100'
+'
 --- !u!222 &1301788123
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11202,9 +11152,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -11230,7 +11180,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1312884064}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -11243,7 +11193,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 91ab9dbbd5c703748b0158fb1c7eda3d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12794,7 +12744,6 @@ GameObject:
   - component: {fileID: 1441817626}
   - component: {fileID: 1441817629}
   - component: {fileID: 1441817628}
-  - component: {fileID: 1441817627}
   m_Layer: 5
   m_Name: DecreaseHPMP
   m_TagString: Untagged
@@ -12820,47 +12769,6 @@ RectTransform:
   m_AnchoredPosition: {x: 423.09, y: -53}
   m_SizeDelta: {x: 447.46, y: 61.9}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1441817627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1441817625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac430a731a6c93e4daf20f0ec65737e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  castingBar: {fileID: 75337071}
-  currentSpell: {fileID: 1701209935}
-  castTime: {fileID: 1527616132}
-  icon: {fileID: 668018244}
-  canvasGroup: {fileID: 1939180844}
-  spells:
-  - name: Explosion
-    damage: 5
-    icon: {fileID: 21300000, guid: 91ab9dbbd5c703748b0158fb1c7eda3d, type: 3}
-    speed: 15
-    castTime: 2.5
-    spellPrefab: {fileID: 1902044956659912, guid: ca20d192b8025444b865feab143565b9,
-      type: 2}
-    barColor: {r: 0.8584906, g: 0.38559783, b: 0.11743506, a: 1}
-  - name: Cold Blast
-    damage: 3
-    icon: {fileID: 21300000, guid: 0055333b5f659294887f460ea05ee402, type: 3}
-    speed: 15
-    castTime: 1.5
-    spellPrefab: {fileID: 1257890671650232, guid: 22eaecaa4592fa84495675c067a3ca4e,
-      type: 2}
-    barColor: {r: 0, g: 0.15367556, b: 1, a: 1}
-  - name: Lightning
-    damage: 1
-    icon: {fileID: 21300000, guid: 77584412a780e5a49b4c49100c30a662, type: 3}
-    speed: 15
-    castTime: 1
-    spellPrefab: {fileID: 1289655220280320, guid: 7ed9ab4f2f7cbe24a9b588f0ad119dad,
-      type: 2}
-    barColor: {r: 0.7830189, g: 0.033241354, b: 0.5619975, a: 1}
 --- !u!114 &1441817628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13179,7 +13087,6 @@ GameObject:
   - component: {fileID: 1465392170}
   - component: {fileID: 1465392172}
   - component: {fileID: 1465392171}
-  - component: {fileID: 1465392173}
   m_Layer: 5
   m_Name: Spellbook
   m_TagString: Untagged
@@ -13246,47 +13153,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1465392169}
   m_CullTransparentMesh: 0
---- !u!114 &1465392173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1465392169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac430a731a6c93e4daf20f0ec65737e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  castingBar: {fileID: 75337071}
-  currentSpell: {fileID: 1701209935}
-  castTime: {fileID: 1527616132}
-  icon: {fileID: 668018244}
-  canvasGroup: {fileID: 1939180844}
-  spells:
-  - name: Explosion
-    damage: 5
-    icon: {fileID: 21300000, guid: 91ab9dbbd5c703748b0158fb1c7eda3d, type: 3}
-    speed: 15
-    castTime: 2.5
-    spellPrefab: {fileID: 1902044956659912, guid: ca20d192b8025444b865feab143565b9,
-      type: 2}
-    barColor: {r: 0.8584906, g: 0.38559783, b: 0.11743506, a: 1}
-  - name: Cold Blast
-    damage: 3
-    icon: {fileID: 21300000, guid: 0055333b5f659294887f460ea05ee402, type: 3}
-    speed: 15
-    castTime: 1.5
-    spellPrefab: {fileID: 1257890671650232, guid: 22eaecaa4592fa84495675c067a3ca4e,
-      type: 2}
-    barColor: {r: 0, g: 0.15367556, b: 1, a: 1}
-  - name: Lightning
-    damage: 1
-    icon: {fileID: 21300000, guid: 77584412a780e5a49b4c49100c30a662, type: 3}
-    speed: 15
-    castTime: 1
-    spellPrefab: {fileID: 1289655220280320, guid: 7ed9ab4f2f7cbe24a9b588f0ad119dad,
-      type: 2}
-    barColor: {r: 0.7830189, g: 0.033241354, b: 0.5619975, a: 1}
 --- !u!1 &1472673716
 GameObject:
   m_ObjectHideFlags: 0
@@ -14104,6 +13970,7 @@ MonoBehaviour:
     castTime: 2.5
     spellPrefab: {fileID: 1902044956659912, guid: ca20d192b8025444b865feab143565b9,
       type: 2}
+    description: <i>Creates a powerful explosion, injuring those caught in its blast.</i>
     barColor: {r: 1, g: 0.42057624, b: 0.1273585, a: 1}
   - name: Cold Blast
     damage: 2
@@ -14112,6 +13979,7 @@ MonoBehaviour:
     castTime: 1.5
     spellPrefab: {fileID: 1257890671650232, guid: 22eaecaa4592fa84495675c067a3ca4e,
       type: 2}
+    description: <i>This creates a projectile sphere of cold energy.</i>
     barColor: {r: 0, g: 0.3010359, b: 0.9716981, a: 1}
   - name: Lightning
     damage: 1
@@ -14120,6 +13988,7 @@ MonoBehaviour:
     castTime: 1
     spellPrefab: {fileID: 1289655220280320, guid: 7ed9ab4f2f7cbe24a9b588f0ad119dad,
       type: 2}
+    description: <i>This spell shoots a bolt of electrical energy at a specified target</i>
     barColor: {r: 1, g: 0.9220363, b: 0, a: 1}
 --- !u!114 &1551737130
 MonoBehaviour:
@@ -16677,6 +16546,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4041811137371306, guid: 7201079e7a4ca3f4ab35f43eccf67e09,
     type: 2}
   m_PrefabInternal: {fileID: 656098814}
+--- !u!1 &1826244595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1826244596}
+  - component: {fileID: 1826244597}
+  m_Layer: 0
+  m_Name: Console
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1826244596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1826244595}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1250951060}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1826244597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1826244595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab49249940aa1694fad14a8c092bee08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleKey: 96
+  openOnStart: 0
+  shakeToOpen: 1
+  shakeAcceleration: 3
+  restrictLogCount: 0
+  maxLogCount: 1000
 --- !u!1 &1831030937
 GameObject:
   m_ObjectHideFlags: 0
