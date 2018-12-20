@@ -14,3 +14,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: fee9e6c0c87888f47bf5b4edd132737f, type: 3}
   stackSize: 10
   title: Empty Bottle
+  quality: 0
+  itemDescription: An empty bottle which can be sold for a few gold or can be used
+    in Alchemy.

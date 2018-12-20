@@ -33,9 +33,9 @@ public class UIManager : MonoBehaviour
     private Image portraitFrame;
 
     [SerializeField]
-    private GameObject tooltip;
+    private GameObject toolTip;
 
-    private Text tooltipText;
+    private Text toolTipTitle;
 
     [SerializeField]
     private CanvasGroup keybindMenu;
@@ -61,7 +61,7 @@ public class UIManager : MonoBehaviour
     {
         keybindButtons = GameObject.FindGameObjectsWithTag("Keybind");
         spellBarAnim = GameObject.FindGameObjectWithTag("SpellBarAnim").GetComponent<Animator>();
-        tooltipText = tooltip.GetComponentInChildren<Text>();
+        toolTipTitle = toolTip.GetComponentInChildren<Text>();
     }
 
     // Use this for initialization
@@ -173,14 +173,14 @@ public class UIManager : MonoBehaviour
 
     public void ShowTooltip(Vector3 position, IDescribable description)
     {
-        tooltip.SetActive(true);
-        tooltip.transform.position = position;
-        tooltipText.text = description.GetDescription();
+        toolTip.SetActive(true);
+        toolTip.transform.position = position;
+        toolTipTitle.text = description.GetDescription();        
     }
 
     public void HideTooltip()
     {
-        tooltip.SetActive(false);
+        toolTip.SetActive(false);
     }
 
     public void UpdateKeyText(string key, KeyCode code)

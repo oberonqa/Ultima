@@ -1805,7 +1805,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 83.399376, y: -57.396168}
-  m_SizeDelta: {x: 166.79872, y: 114.79233}
+  m_SizeDelta: {x: 78.619804, y: 38.115013}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &159577379
 MonoBehaviour:
@@ -9347,7 +9347,7 @@ MonoBehaviour:
   - {fileID: 1610420100}
   targetFrame: {fileID: 1990740006}
   portraitFrame: {fileID: 1417753166}
-  tooltip: {fileID: 159577377}
+  toolTip: {fileID: 159577377}
   keybindMenu: {fileID: 370580366}
   spellBook: {fileID: 1551737132}
   spellBarAnim: {fileID: 2114291259}
@@ -10844,6 +10844,7 @@ MonoBehaviour:
     castTime: 2.5
     spellPrefab: {fileID: 1902044956659912, guid: ca20d192b8025444b865feab143565b9,
       type: 2}
+    description: 
     barColor: {r: 0.8584906, g: 0.38559783, b: 0.11743506, a: 1}
   - name: Cold Blast
     damage: 3
@@ -10852,6 +10853,7 @@ MonoBehaviour:
     castTime: 1.5
     spellPrefab: {fileID: 1257890671650232, guid: 22eaecaa4592fa84495675c067a3ca4e,
       type: 2}
+    description: 
     barColor: {r: 0, g: 0.15367556, b: 1, a: 1}
   - name: Lightning
     damage: 1
@@ -10860,6 +10862,7 @@ MonoBehaviour:
     castTime: 1
     spellPrefab: {fileID: 1289655220280320, guid: 7ed9ab4f2f7cbe24a9b588f0ad119dad,
       type: 2}
+    description: 
     barColor: {r: 0.7830189, g: 0.033241354, b: 0.5619975, a: 1}
 --- !u!114 &1298437781
 MonoBehaviour:
@@ -11009,8 +11012,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 83.39936, y: -57.396164}
-  m_SizeDelta: {x: 150.79872, y: 104.79233}
+  m_AnchoredPosition: {x: 39.309902, y: -19.057507}
+  m_SizeDelta: {x: 62.619804, y: 28.115013}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1301788122
 MonoBehaviour:
@@ -11032,11 +11035,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 07002e886e92e614ebf193907ac19b60, type: 3}
-    m_FontSize: 14
-    m_FontStyle: 0
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 10
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -11046,16 +11049,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Virtue Blade
 
-    A legendary blade, passed down
-
-    through the generations
-
-
-    Strength: 100
-
-    Vitality: 100
-
-    Dextarity: 100'
+'
 --- !u!222 &1301788123
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12844,6 +12838,7 @@ MonoBehaviour:
     castTime: 2.5
     spellPrefab: {fileID: 1902044956659912, guid: ca20d192b8025444b865feab143565b9,
       type: 2}
+    description: 
     barColor: {r: 0.8584906, g: 0.38559783, b: 0.11743506, a: 1}
   - name: Cold Blast
     damage: 3
@@ -12852,6 +12847,7 @@ MonoBehaviour:
     castTime: 1.5
     spellPrefab: {fileID: 1257890671650232, guid: 22eaecaa4592fa84495675c067a3ca4e,
       type: 2}
+    description: 
     barColor: {r: 0, g: 0.15367556, b: 1, a: 1}
   - name: Lightning
     damage: 1
@@ -12860,6 +12856,7 @@ MonoBehaviour:
     castTime: 1
     spellPrefab: {fileID: 1289655220280320, guid: 7ed9ab4f2f7cbe24a9b588f0ad119dad,
       type: 2}
+    description: 
     barColor: {r: 0.7830189, g: 0.033241354, b: 0.5619975, a: 1}
 --- !u!114 &1441817628
 MonoBehaviour:
@@ -13270,6 +13267,7 @@ MonoBehaviour:
     castTime: 2.5
     spellPrefab: {fileID: 1902044956659912, guid: ca20d192b8025444b865feab143565b9,
       type: 2}
+    description: 
     barColor: {r: 0.8584906, g: 0.38559783, b: 0.11743506, a: 1}
   - name: Cold Blast
     damage: 3
@@ -13278,6 +13276,7 @@ MonoBehaviour:
     castTime: 1.5
     spellPrefab: {fileID: 1257890671650232, guid: 22eaecaa4592fa84495675c067a3ca4e,
       type: 2}
+    description: 
     barColor: {r: 0, g: 0.15367556, b: 1, a: 1}
   - name: Lightning
     damage: 1
@@ -13286,6 +13285,7 @@ MonoBehaviour:
     castTime: 1
     spellPrefab: {fileID: 1289655220280320, guid: 7ed9ab4f2f7cbe24a9b588f0ad119dad,
       type: 2}
+    description: 
     barColor: {r: 0.7830189, g: 0.033241354, b: 0.5619975, a: 1}
 --- !u!1 &1472673716
 GameObject:
@@ -14097,13 +14097,14 @@ MonoBehaviour:
   icon: {fileID: 668018244}
   canvasGroup: {fileID: 1939180844}
   spells:
-  - name: Explosion
+  - name: FireTest
     damage: 5
     icon: {fileID: 21300000, guid: 91ab9dbbd5c703748b0158fb1c7eda3d, type: 3}
     speed: 5
-    castTime: 2.5
+    castTime: 10
     spellPrefab: {fileID: 1902044956659912, guid: ca20d192b8025444b865feab143565b9,
       type: 2}
+    description: <i>Creates a powerful explosion, injuring those caught in its blast.</i>
     barColor: {r: 1, g: 0.42057624, b: 0.1273585, a: 1}
   - name: Cold Blast
     damage: 2
@@ -14112,6 +14113,8 @@ MonoBehaviour:
     castTime: 1.5
     spellPrefab: {fileID: 1257890671650232, guid: 22eaecaa4592fa84495675c067a3ca4e,
       type: 2}
+    description: <i>This creates a projectile sphere of cold energy, much like a snowball,
+      though with significantly greater capacity to inflict wounds.</i>
     barColor: {r: 0, g: 0.3010359, b: 0.9716981, a: 1}
   - name: Lightning
     damage: 1
@@ -14120,6 +14123,7 @@ MonoBehaviour:
     castTime: 1
     spellPrefab: {fileID: 1289655220280320, guid: 7ed9ab4f2f7cbe24a9b588f0ad119dad,
       type: 2}
+    description: <i>This spell shoots a bolt of electrical energy at a specified target</i>
     barColor: {r: 1, g: 0.9220363, b: 0, a: 1}
 --- !u!114 &1551737130
 MonoBehaviour:

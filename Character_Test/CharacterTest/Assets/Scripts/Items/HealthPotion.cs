@@ -8,6 +8,9 @@ public class HealthPotion : Item, IUseable
     [SerializeField]
     private int health;
 
+    [SerializeField]
+    private string itemDescription;
+
     public void Use()
     {
         if (Player.MyInstance.MyHealth.MyCurrentValue < Player.MyInstance.MyHealth.MyMaxValue)
@@ -18,5 +21,11 @@ public class HealthPotion : Item, IUseable
 
             InventoryScript.MyInstance.AddEmptyBottle();
         }
+    }
+
+    public override string GetDescription()
+    {   
+        
+        return base.GetDescription() + "\n" + itemDescription;
     }
 }

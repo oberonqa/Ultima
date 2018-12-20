@@ -6,7 +6,15 @@ using UnityEngine;
 
 public class EmptyBottle : Item, IUseable
 {
+    [SerializeField]
+    private string itemDescription;
+
     public void Use()
     {
+    }
+
+    public override string GetDescription()
+    {
+        return base.GetDescription() + "\n" + itemDescription;
     }
 }

@@ -9,6 +9,9 @@ public class Bag : Item, IUseable
     private int slots;
 
     [SerializeField]
+    private string itemDescription;
+
+    [SerializeField]
     private GameObject bagPrefab;
 
     public BagScript MyBagScript { get; set; }
@@ -45,5 +48,10 @@ public class Bag : Item, IUseable
                 InventoryScript.MyInstance.AddBag(this, MyBagButton);
             }
         }
+    }
+
+    public override string GetDescription()
+    {
+        return base.GetDescription() + "\n" + itemDescription;
     }
 }
