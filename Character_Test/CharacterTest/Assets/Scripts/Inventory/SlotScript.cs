@@ -12,6 +12,9 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPoin
     private Image icon;
 
     [SerializeField]
+    private Image rarityFrame;
+
+    [SerializeField]
     private Text stackSize;
 
     // Reference to the bag that this slot belongs to
@@ -96,9 +99,50 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPoin
     {
         MyItems.Push(item);
         icon.sprite = item.MyIcon;
-        icon.color = Color.white;
+        icon.color = Color.white;        
         item.MySlot = this;
+        SetRarityFrame(item);
         return true;
+    }
+
+    private void SetRarityFrame(Item item)
+    {
+        if (!IsEmpty)
+        {
+            if (item.MyQuality == Quality.Common)
+            {
+                rarityFrame.enabled = false;
+            }
+            if (item.MyQuality == Quality.Uncommon)
+            {
+                rarityFrame.enabled = true;
+                rarityFrame.color = new Color(83 / 255f, 255f, 0 / 255f, 36 / 255f);
+            }
+
+            if (item.MyQuality == Quality.Rare)
+            {
+                rarityFrame.enabled = true;
+                rarityFrame.color = new Color(0 / 255f, 37 / 255f, 255, 68 / 255f);
+            }
+
+            if (item.MyQuality == Quality.Epic)
+            {
+                rarityFrame.enabled = true;
+                rarityFrame.color = new Color(171 / 255f, 0 / 255f, 191, 36 / 255f);
+            }
+
+            if (item.MyQuality == Quality.Legendary)
+            {
+                rarityFrame.enabled = true;
+                rarityFrame.color = new Color(255, 101 / 255f, 0, 68 / 255f);
+            }
+
+            if (item.MyQuality == Quality.Mythical)
+            {
+                rarityFrame.enabled = true;
+                rarityFrame.color = new Color(255, 0, 0, 58 / 255f);
+            }         
+        }   
     }
 
     public bool AddItems(ObservableStack<Item> newItems)
@@ -128,6 +172,7 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPoin
         if (!IsEmpty)
         {
             InventoryScript.MyInstance.OnItemCountChanged(MyItems.Pop());
+            rarityFrame.enabled = false;
         }
     }
 
@@ -137,6 +182,7 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPoin
         {
             InventoryScript.MyInstance.OnItemCountChanged(MyItems.Pop());
             MyItems.Clear();
+            rarityFrame.enabled = false;
         }
     }
 
@@ -175,7 +221,7 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPoin
             {
                 if (PutItemBack() || MergeItems(InventoryScript.MyInstance.FromSlot) || SwapItems(InventoryScript.MyInstance.FromSlot) || AddItems(InventoryScript.MyInstance.FromSlot.MyItems))
                 {
-                    HandScript.MyInstance.Drop();
+                    HandScript.MyInstance.Drop();                    
                     InventoryScript.MyInstance.FromSlot = null;
                 }                
             }
@@ -192,6 +238,7 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPoin
         if (MyItem is IUseable)
         {
             (MyItem as IUseable).Use();
+            SetRarityFrame(MyItem);
         }  
     }
 
@@ -231,15 +278,16 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPoin
 
             // Clear slot A
             from.MyItems.Clear();
+            from.rarityFrame.enabled = false;
 
             // Take all items from Slot B and copy them into slot A
             from.AddItems(MyItems);
 
             // Clear slot B
-            MyItems.Clear();
+            MyItems.Clear();            
 
             // Move the items from Copy A to B
-            AddItems(tmpFrom);
+            AddItems(tmpFrom);            
 
             return true;
         }
@@ -270,8 +318,12 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPoin
     }
 
     private void UpdateSlot()
-    {
+    {        
         UIManager.MyInstance.UpdateStackSize(this);
+        if (IsEmpty)
+        {
+            rarityFrame.enabled = false;
+        }        
     }
 
     public void OnPointerEnter(PointerEventData eventData)

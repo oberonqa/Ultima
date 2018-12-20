@@ -20,6 +20,14 @@ public abstract class Item : ScriptableObject, IMoveable, IDescribable
 
     private SlotScript slot;
 
+    public Quality MyQuality
+    {
+        get
+        {
+            return quality;
+        }
+    }
+
     public Sprite MyIcon
     {
         get
