@@ -15,5 +15,5 @@ MonoBehaviour:
   stackSize: 1
   title: Bag
   quality: 3
-  itemDescription: This unusually large bag can hold quite a lot!
+  itemDescription: 20 slot bag
   bagPrefab: {fileID: 1919161724520164, guid: 97e6090731d1eeb4b9891421c621c5cc, type: 2}

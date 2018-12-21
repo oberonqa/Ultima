@@ -106,9 +106,12 @@ public class InventoryScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
-            Bag bag = (Bag)Instantiate(items[0]);
-            bag.Initialize(8);
-            bag.Use();
+            AddItem((Armor)Instantiate(items[3]));
+            AddItem((Armor)Instantiate(items[4]));
+            AddItem((Armor)Instantiate(items[5]));
+            AddItem((Armor)Instantiate(items[6]));
+            AddItem((Armor)Instantiate(items[7]));
+            AddItem((Armor)Instantiate(items[8]));
         }
 
         if (Input.GetKeyDown(KeyCode.K))

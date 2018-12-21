@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Quality { Common, Uncommon, Rare, Epic, Legendary, Mythical }
+
 
 public abstract class Item : ScriptableObject, IMoveable, IDescribable
 {
@@ -63,33 +63,27 @@ public abstract class Item : ScriptableObject, IMoveable, IDescribable
 
         switch (quality)
         {
-            case Quality.Common:
-                color = "#d6d6d6";
+            case Quality.Common:                
                 UIManager.MyInstance.MyToolTipFrame.sprite = UIManager.MyInstance.CommonQualityFrame;
                 break;
-            case Quality.Uncommon:
-                color = "#00ff3e";
+            case Quality.Uncommon:                
                 UIManager.MyInstance.MyToolTipFrame.sprite = UIManager.MyInstance.UncommonQualityFrame;
                 break;
-            case Quality.Rare:
-                color = "#0000e0";
+            case Quality.Rare:                
                 UIManager.MyInstance.MyToolTipFrame.sprite = UIManager.MyInstance.RareQualityFrame;
                 break;
-            case Quality.Epic:
-                color = "#b900ff";
+            case Quality.Epic:                
                 UIManager.MyInstance.MyToolTipFrame.sprite = UIManager.MyInstance.EpicQualityFrame;
                 break;
-            case Quality.Legendary:
-                color = "#ff5500";
+            case Quality.Legendary:                
                 UIManager.MyInstance.MyToolTipFrame.sprite = UIManager.MyInstance.LegendaryQualityFrame;
                 break;
-            case Quality.Mythical:
-                color = "#f91111";
+            case Quality.Mythical:                
                 UIManager.MyInstance.MyToolTipFrame.sprite = UIManager.MyInstance.MythicalQualityFrame;
                 break;
         }
 
-        return string.Format("<color={0}> {1}</color>", color, title);
+        return string.Format("<color={0}> {1}</color>", QualityColor.MyColors[quality], title);
     }
 
     public void Remove()
