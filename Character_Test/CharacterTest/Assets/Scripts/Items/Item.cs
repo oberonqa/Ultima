@@ -57,10 +57,16 @@ public abstract class Item : ScriptableObject, IMoveable, IDescribable
         }
     }
 
+    public string MyTitle
+    {
+        get
+        {
+            return title;
+        }
+    }
+
     public virtual string GetDescription()
     {
-        string color = string.Empty;        
-
         switch (quality)
         {
             case Quality.Common:                
@@ -83,7 +89,7 @@ public abstract class Item : ScriptableObject, IMoveable, IDescribable
                 break;
         }
 
-        return string.Format("<color={0}> {1}</color>", QualityColor.MyColors[quality], title);
+        return string.Format("<color={0}> {1}</color>", QualityColor.MyColors[quality], MyTitle);
     }
 
     public void Remove()

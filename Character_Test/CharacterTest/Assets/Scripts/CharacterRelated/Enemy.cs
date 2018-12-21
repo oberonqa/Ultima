@@ -10,6 +10,9 @@ public class Enemy : NPC
 
     private IState currentState;
 
+    [SerializeField]
+    private LootTable lootTable;
+
     public float MyAttackRange { get; set; }
 
     public float MyAttackTime { get; set; }
@@ -107,5 +110,13 @@ public class Enemy : NPC
         this.MyAggroRange = initAggroRange;
         this.MyHealth.MyCurrentValue = this.MyHealth.MyMaxValue;
         OnHealthChanged(health.MyCurrentValue);
+    }
+
+    public override void Interact()
+    {
+        if (!IsAlive)
+        {
+            lootTable.ShowLoot();
+        }        
     }
 }

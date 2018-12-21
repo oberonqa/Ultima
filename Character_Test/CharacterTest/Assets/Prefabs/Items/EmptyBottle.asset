@@ -15,5 +15,4 @@ MonoBehaviour:
   stackSize: 10
   title: Empty Bottle
   quality: 0
-  itemDescription: An empty bottle which can be sold for a few gold or can be used
-    in Alchemy.
+  itemDescription: Can be sold for a few gold.

@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - Keybind
   - SpellBarAnim
+  - Interactable
   layers:
   - Default
   - TransparentFX

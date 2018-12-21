@@ -50,4 +50,10 @@ public class NPC : Character
 
         Destroy(gameObject);
     }
+
+    public virtual void Interact()
+    {
+        // Not implemented yet
+        Debug.Log("This will open a dialog with the NPC");
+    }
 }

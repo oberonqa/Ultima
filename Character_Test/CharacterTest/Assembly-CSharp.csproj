@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Behaviors\SpellBehavior.cs" />
     <Compile Include="Assets\Scripts\Buttons\ActionButton.cs" />
     <Compile Include="Assets\Scripts\Buttons\BagButton.cs" />
+    <Compile Include="Assets\Scripts\Buttons\LootButton.cs" />
     <Compile Include="Assets\Scripts\Buttons\SpellButton.cs" />
     <Compile Include="Assets\Scripts\CharacterRelated\Block.cs" />
     <Compile Include="Assets\Scripts\CharacterRelated\Character.cs" />
@@ -83,6 +84,8 @@
     <Compile Include="Assets\Scripts\Environment\Obstacle.cs" />
     <Compile Include="Assets\Scripts\Inventory\BagScript.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryScript.cs" />
+    <Compile Include="Assets\Scripts\Inventory\Loot.cs" />
+    <Compile Include="Assets\Scripts\Inventory\LootTable.cs" />
     <Compile Include="Assets\Scripts\Inventory\SlotScript.cs" />
     <Compile Include="Assets\Scripts\Items\Armor.cs" />
     <Compile Include="Assets\Scripts\Items\Bag.cs" />
@@ -100,6 +103,7 @@
     <Compile Include="Assets\Scripts\UIRelated\IDescribable.cs" />
     <Compile Include="Assets\Scripts\UIRelated\IMoveable.cs" />
     <Compile Include="Assets\Scripts\UIRelated\IUseable.cs" />
+    <Compile Include="Assets\Scripts\UIRelated\LootWindow.cs" />
     <Compile Include="Assets\Scripts\UIRelated\ObservableStack.cs" />
     <Compile Include="Assets\Scripts\UIRelated\QualityColor.cs" />
     <None Include="Assets\UI\Fonts\Akvaleir Regular\ffonts.net.txt" />
