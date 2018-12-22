@@ -16,6 +16,9 @@ public class ActionButton : MonoBehaviour, IPointerClickHandler, IClickable, IPo
 
     private int count;
 
+    private bool slottedSpell = false;
+    private bool slottedItem = false;
+
     public Button MyButton { get; private set; }
 
     public Image MyIcon
@@ -85,8 +88,25 @@ public class ActionButton : MonoBehaviour, IPointerClickHandler, IClickable, IPo
         {
             if (HandScript.MyInstance.MyMoveable != null && HandScript.MyInstance.MyMoveable is IUseable)
             {
-                SetUseable(HandScript.MyInstance.MyMoveable as IUseable);
-            }
+                if (SpellButton.MyInstance.isMovingSpell)
+                {
+                    if (MyButton.name == "ACT1" || MyButton.name == "ACT2" || MyButton.name == "ACT3")
+                    {
+                        SetUseable(HandScript.MyInstance.MyMoveable as IUseable);
+                        SpellButton.MyInstance.isMovingSpell = false;
+                        slottedSpell = true;
+                    }
+                }
+                if (!SpellButton.MyInstance.isMovingSpell)
+                {
+                    if (MyButton.name == "ACT4" || MyButton.name == "ACT5" || MyButton.name == "ACT6" ||
+                        MyButton.name == "ACT7" || MyButton.name == "ACT8" || MyButton.name == "ACT9")
+                    {
+                        SetUseable(HandScript.MyInstance.MyMoveable as IUseable);
+                        slottedItem = true;
+                    }
+                }            
+            }                        
         }
     }
 
@@ -109,9 +129,12 @@ public class ActionButton : MonoBehaviour, IPointerClickHandler, IClickable, IPo
 
     public void UpdateVisual()
     {
-        MyIcon.sprite = HandScript.MyInstance.Put().MyIcon;
-        MyIcon.color = Color.white;
-
+        if (!slottedSpell)
+        {
+            MyIcon.sprite = HandScript.MyInstance.Put().MyIcon;
+            MyIcon.color = Color.white;
+        }
+        
         if (count > 1)
         {
             UIManager.MyInstance.UpdateStackSize(this);
