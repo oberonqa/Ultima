@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-enum ArmorType { Helmet, Shoulders, Chest, Gloves, Legs, Feet, Back, Ring1, Ring2, Neck, MainHand, OffHand, TwoHand }
+enum ArmorType { Helmet, Shoulders, Chest, Gloves, Legs, Feet, Back, Ring, Neck, MainHand, OffHand, TwoHand }
 
 [CreateAssetMenu(fileName = "Armor", menuName = "Items/Armor", order = 2)]
 public class Armor : Item
@@ -18,6 +18,14 @@ public class Armor : Item
 
     [SerializeField]
     private int dexterity;
+
+    internal ArmorType MyArmorType
+    {
+        get
+        {
+            return armorType;
+        }
+    }
 
     public override string GetDescription()
     {

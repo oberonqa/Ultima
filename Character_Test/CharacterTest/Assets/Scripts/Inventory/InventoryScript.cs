@@ -112,6 +112,12 @@ public class InventoryScript : MonoBehaviour
             AddItem((Armor)Instantiate(items[6]));
             AddItem((Armor)Instantiate(items[7]));
             AddItem((Armor)Instantiate(items[8]));
+            AddItem((Armor)Instantiate(items[9]));
+            AddItem((Armor)Instantiate(items[9]));
+            AddItem((Armor)Instantiate(items[10]));
+            AddItem((Armor)Instantiate(items[11]));
+            AddItem((Armor)Instantiate(items[12]));
+            AddItem((Armor)Instantiate(items[13]));
         }
 
         if (Input.GetKeyDown(KeyCode.K))

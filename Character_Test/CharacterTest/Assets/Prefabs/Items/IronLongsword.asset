@@ -15,7 +15,7 @@ MonoBehaviour:
   stackSize: 0
   title: Iron Longsword
   quality: 5
-  armorType: 10
+  armorType: 9
   intelligence: 25
   strength: 55
   dexterity: 45

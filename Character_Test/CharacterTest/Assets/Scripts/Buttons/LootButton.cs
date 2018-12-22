@@ -39,11 +39,12 @@ public class LootButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        // We need to loot the item right here     
-        if (InventoryScript.MyInstance.AddItem(MyLoot))
+        // We need to loot the item right here   
+        Item loot = Instantiate(MyLoot);
+        if (InventoryScript.MyInstance.AddItem(loot))
         {
             gameObject.SetActive(false);
-            lootWindow.TakeLoot(MyLoot);
+            lootWindow.TakeLoot(loot);
             UIManager.MyInstance.HideTooltip();
         }        
     }

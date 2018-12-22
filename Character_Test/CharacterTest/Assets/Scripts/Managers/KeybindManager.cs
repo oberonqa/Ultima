@@ -54,6 +54,7 @@ public class KeybindManager : MonoBehaviour
         BindKey("KEYBIND", KeyCode.Escape);
         BindKey("SPELLBOOK", KeyCode.P);
         BindKey("BAGS", KeyCode.B);
+        BindKey("CHAR", KeyCode.C);
     }
 	
     public void BindKey(string key, KeyCode keyBind)

@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Behaviors\SpellBehavior.cs" />
     <Compile Include="Assets\Scripts\Buttons\ActionButton.cs" />
     <Compile Include="Assets\Scripts\Buttons\BagButton.cs" />
+    <Compile Include="Assets\Scripts\Buttons\CharButton.cs" />
     <Compile Include="Assets\Scripts\Buttons\LootButton.cs" />
     <Compile Include="Assets\Scripts\Buttons\SpellButton.cs" />
     <Compile Include="Assets\Scripts\CharacterRelated\Block.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Assets\Scripts\Spells\Spell.cs" />
     <Compile Include="Assets\Scripts\Spells\SpellBook.cs" />
     <Compile Include="Assets\Scripts\Spells\SpellScript.cs" />
+    <Compile Include="Assets\Scripts\UIRelated\CharacterPanel.cs" />
     <Compile Include="Assets\Scripts\UIRelated\HandScript.cs" />
     <Compile Include="Assets\Scripts\UIRelated\IClickable.cs" />
     <Compile Include="Assets\Scripts\UIRelated\IDescribable.cs" />

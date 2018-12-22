@@ -51,6 +51,9 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private Animator spellBarAnim;
+    
+    [SerializeField]
+    private CharacterPanel charPanel;
 
     private GameObject[] keybindButtons;
 
@@ -162,6 +165,10 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown(KeybindManager.MyInstance.Keybinds["BAGS"]))
         {
             InventoryScript.MyInstance.OpenClose();
+        }
+        if (Input.GetKeyDown(KeybindManager.MyInstance.Keybinds["CHAR"]))
+        {
+            charPanel.OpenClose();
         }
     }
 
