@@ -108,6 +108,7 @@
     <Compile Include="Assets\Scripts\UIRelated\LootWindow.cs" />
     <Compile Include="Assets\Scripts\UIRelated\ObservableStack.cs" />
     <Compile Include="Assets\Scripts\UIRelated\QualityColor.cs" />
+    <Compile Include="Assets\Scripts\UIRelated\Tooltip.cs" />
     <None Include="Assets\UI\Fonts\Akvaleir Regular\ffonts.net.txt" />
     <None Include="Assets\UI\Fonts\Akvaleir Regular\install-a-new-font.txt" />
     <Reference Include="UnityEditor.StandardEvents">

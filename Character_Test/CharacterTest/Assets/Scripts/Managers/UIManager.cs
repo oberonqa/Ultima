@@ -35,7 +35,10 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject toolTip;
 
-    private Text toolTipTitle;
+    [SerializeField]
+    private GameObject EquipmentTooltip;
+
+    private Text toolTipText;
 
     [SerializeField]
     private Image toolTipFrame;
@@ -54,6 +57,9 @@ public class UIManager : MonoBehaviour
     
     [SerializeField]
     private CharacterPanel charPanel;
+
+    [SerializeField]
+    private RectTransform tooltipRect;
 
     private GameObject[] keybindButtons;
 
@@ -138,7 +144,7 @@ public class UIManager : MonoBehaviour
     {
         keybindButtons = GameObject.FindGameObjectsWithTag("Keybind");
         spellBarAnim = GameObject.FindGameObjectWithTag("SpellBarAnim").GetComponent<Animator>();
-        toolTipTitle = toolTip.GetComponentInChildren<Text>();
+        toolTipText = toolTip.GetComponentInChildren<Text>();
         toolTipFrame = toolTip.GetComponent<Image>();
     }
 
@@ -253,16 +259,38 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void ShowTooltip(Vector3 position, IDescribable description)
+    //public void ShowTooltip(Vector3 position, IDescribable description)
+    //{
+    //    toolTip.SetActive(true);
+    //    toolTip.transform.position = position;
+    //    toolTipTitle.text = description.GetDescription();
+    //}
+
+    public void ShowTooltip(string tooltipType, Vector2 pivot, Vector3 position, IDescribable description)
     {
-        toolTip.SetActive(true);        
-        toolTip.transform.position = position;
-        toolTipTitle.text = description.GetDescription();        
+        if (tooltipType == "generic")
+        {
+            tooltipRect.pivot = pivot;
+            toolTip.SetActive(true);
+            toolTip.transform.position = position;
+            toolTipText.text = description.GetDescription();
+        } 
+        if (tooltipType == "equipment")
+        {            
+            EquipmentTooltip.SetActive(true);
+            EquipmentTooltip.transform.position = position;
+        }
     }
 
     public void HideTooltip()
     {
+        EquipmentTooltip.SetActive(false);
         toolTip.SetActive(false);
+    }
+
+    public void RefreshTooltip(IDescribable description)
+    {
+        toolTipText.text = description.GetDescription();
     }
 
     public void UpdateKeyText(string key, KeyCode code)

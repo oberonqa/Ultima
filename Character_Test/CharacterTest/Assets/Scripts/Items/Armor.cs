@@ -47,4 +47,14 @@ public class Armor : Item
         return base.GetDescription() + stats;
     }
 
+    public void Equip()
+    {
+        if (this.armorType == ArmorType.Ring)
+        {            
+            CharacterPanel.MyInstance.EquipArmor(this);
+            return;
+        }                    
+
+        CharacterPanel.MyInstance.EquipArmor(this);
+    }
 }

@@ -4,12 +4,26 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CharButton : MonoBehaviour, IPointerClickHandler
+public class CharButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    private static CharButton instance;
+    public static CharButton MyInstance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = GameObject.FindObjectOfType<CharButton>();
+            }
+
+            return instance;
+        }
+    }
+
     [SerializeField]
     private ArmorType armorType;
 
-    private Armor armor;
+    private Armor equippedArmor;
 
     [SerializeField]
     private Image baseIcon;
@@ -23,6 +37,36 @@ public class CharButton : MonoBehaviour, IPointerClickHandler
     [SerializeField]
     private Image rarityFrame;
 
+    private bool isEmpty = true;
+
+    private string equippedItem = "";
+
+    public bool IsEmpty
+    {
+        get
+        {
+            return isEmpty;
+        }
+
+        set
+        {
+            isEmpty = value;
+        }
+    }
+
+    public string MyEquippedItem
+    {
+        get
+        {
+            return equippedItem;
+        }
+
+        set
+        {
+            equippedItem = value;
+        }
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)
@@ -35,20 +79,68 @@ public class CharButton : MonoBehaviour, IPointerClickHandler
                 {
                     EquipArmor(tmp);
                 }
+
+                UIManager.MyInstance.RefreshTooltip(tmp);
             }
-        }
+
+            else if (HandScript.MyInstance.MyMoveable == null && equippedArmor != null)
+            {
+                HandScript.MyInstance.TakeMoveable(equippedArmor);
+                CharacterPanel.MyInstance.MySelectedButton = this;
+                icon.color = Color.grey;
+            }
+        }        
     }
 
     public void EquipArmor(Armor armor)
     {
-        baseIcon.enabled = false;
-        baseFrame.enabled = true;
-        icon.enabled = true;
-        rarityFrame.enabled = true;
-        icon.sprite = armor.MyIcon;
-        SetRarityFrame(armor);
-        this.armor = armor;  // A reference to the equipped armor
-        HandScript.MyInstance.DeleteItem();
+        if (MyEquippedItem == armor.name)
+        {
+            Debug.Log("Error!");            
+        }
+        else
+        {
+            armor.Remove();
+
+            if (equippedArmor != null)
+            {
+                if (equippedArmor != armor)
+                {
+                    armor.MySlot.AddItem(equippedArmor);
+                }
+                
+                UIManager.MyInstance.RefreshTooltip(equippedArmor);
+            }
+            else
+            {
+                UIManager.MyInstance.HideTooltip();
+            }
+            baseIcon.enabled = false;
+            baseFrame.enabled = true;
+            icon.enabled = true;
+            rarityFrame.enabled = true;
+            icon.sprite = armor.MyIcon;
+            SetRarityFrame(armor);
+            icon.color = Color.white;
+            this.equippedArmor = armor;  // A reference to the equipped armor
+
+            if (HandScript.MyInstance.MyMoveable == (armor as IMoveable))
+            {
+                HandScript.MyInstance.Drop();
+            }
+
+            isEmpty = false;
+        }
+    }
+
+    public bool CompareItemToEquippedItem(Armor armor)
+    {
+        if (armor.name == equippedItem)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private void SetRarityFrame(Armor armor)
@@ -82,5 +174,28 @@ public class CharButton : MonoBehaviour, IPointerClickHandler
         {
             rarityFrame.color = new Color(255, 0, 0, 58 / 255f);
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (equippedArmor != null)
+        {
+            UIManager.MyInstance.ShowTooltip("generic", new Vector2(0, 0), transform.position, equippedArmor);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        UIManager.MyInstance.HideTooltip();
+    }
+
+    public void DequipArmor()
+    {
+        icon.color = Color.white;
+        icon.enabled = false;
+        equippedArmor = null;
+        baseIcon.enabled = true;
+        baseFrame.enabled = false;
+        rarityFrame.enabled = false;
     }
 }

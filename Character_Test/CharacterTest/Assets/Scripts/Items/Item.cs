@@ -6,6 +6,21 @@ using UnityEngine;
 
 public abstract class Item : ScriptableObject, IMoveable, IDescribable
 {
+    private static Item instance;
+
+    public static Item MyInstance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<Item>();
+            }
+
+            return instance;
+        }
+    }
+
     [SerializeField]
     private Sprite icon;
 
